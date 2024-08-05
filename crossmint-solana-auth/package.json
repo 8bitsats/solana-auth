@@ -1,31 +1,61 @@
 {
-  "name": "@crossmint/solana-auth-nextjs-starter",
-  "private": true,
-  "version": "0.1.2-alpha.0",
+  "name": "@crossmint/sol-auth",
+  "version": "0.1.0",
+  "author": "Paella Labs Inc",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/Paella-Labs/solana-firebase-auth",
+  "type": "module",
+  "sideEffects": false,
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.js"
+  },
+  "workspaces": [
+    "packages/*/*"
+  ],
+  "files": [
+    "LICENSE",
+    "lib",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "clean": "npx lerna run clean",
+    "build": "yarn clean && lerna run build --ignore=@crossmint/solana-auth-nextjs-starter"
   },
   "dependencies": {
-    "@crossmint/solana-auth-base": "^0.1.2-alpha.0",
-    "@crossmint/solana-auth-react-ui": "^0.1.2-alpha.0",
-    "@solana/wallet-adapter-base": "^0.9.2",
-    "@solana/wallet-adapter-react": "^0.15.2",
-    "@solana/wallet-adapter-react-ui": "^0.9.4",
-    "@solana/wallet-adapter-wallets": "^0.14.2",
+    "@solana/wallet-adapter-base": "^0.8.1",
+    "@solana/wallet-adapter-react": "^0.14.0",
+    "@solana/wallet-adapter-react-ui": "^0.7.0",
+    "@solana/wallet-adapter-wallets": "^0.13.0",
     "@solana/web3.js": "^1.20.0",
-    "next": "12.0.8",
-    "next-transpile-modules": "^9.0.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "bs58": "^4.0.1",
+    "firebase": "^9.6.1",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-firebase-hooks": "^4.0.1",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.8",
-    "@types/react": "17.0.38",
-    "eslint": "8.7.0",
-    "eslint-config-next": "12.0.8",
-    "typescript": "4.5.4"
-  }
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "firebase-admin": "^10.0.1",
+    "lerna": "^4.0.0",
+    "next-transpile-modules": "^10.0.1",
+    "shx": "^0.3.3",
+    "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.24"
+  },
+  "packageManager": "yarn@4.3.1+sha512.af78262d7d125afbfeed740602ace8c5e4405cd7f4735c08feb327286b2fdb2390fbca01589bfd1f50b1240548b74806767f5a063c94b67e431aabd0d86f7774"
 }

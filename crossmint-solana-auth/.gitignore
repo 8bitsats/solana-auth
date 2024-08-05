@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+yarn.lock
 /.pnp
 .pnp.js
 
@@ -35,3 +36,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+keys.ts
+solana-signin-firebase-adminsdk-xijbn-40f35347e4.json
+
+
+/lib/**
+lerna-debug.log
+**/*/lib/**
